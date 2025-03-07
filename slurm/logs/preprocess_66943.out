@@ -1,0 +1,46 @@
+Start time: 2025-03-07 11:24:01
+Loading Anaconda module...
+Activating conda environment...
+Conda environment:
+
+# conda environments:
+#
+base                   /apps/anaconda3/2024.10-1
+AI                     /home/mqa887/.conda/envs/AI
+myvm                 * /home/mqa887/.conda/envs/myvm
+
+GPU information:
+Fri Mar  7 11:24:04 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 545.23.08              Driver Version: 545.23.08    CUDA Version: 12.3     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Tesla V100S-PCIE-32GB          On  | 00000000:3B:00.0 Off |                  Off |
+| N/A   28C    P0              24W / 250W |      0MiB / 32768MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  Tesla V100S-PCIE-32GB          On  | 00000000:D8:00.0 Off |                  Off |
+| N/A   30C    P0              27W / 250W |      0MiB / 32768MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Running preprocessing script...
+Loading AudioMNIST dataset...
+Warning: Folder /home/mqa887/tmp/audiomnist/AudioMNIST-master/data/00 does not exist.
+Creating spectrograms...
+Preprocessing complete. Data saved to data/audio_mnist/preprocessed
+High resolution spectrograms shape: (2700, 1, 128, 128)
+Low resolution spectrograms shape: (2700, 1, 32, 32)
+Dataset preprocessed and saved successfully!
+Preprocessing completed successfully!
+End time: 2025-03-07 11:24:56
