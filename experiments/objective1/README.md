@@ -21,7 +21,7 @@ Both models will be designed with similar architectures to ensure fair compariso
   - CNN with similar architecture to MNIST model
   - Input: Mel-spectrograms (64-128 mel bins)
   - Target accuracy: >90%
-  - Script: `train_audiomnist_model.py`
+  - Script: `src/models/train_audiomnist_model.py`
 
 ### 2. XAI Method Implementation
 
@@ -159,3 +159,180 @@ This objective is expected to reveal:
 - Sundararajan, M., Taly, A., & Yan, Q. (2017). Axiomatic attribution for deep networks.
 - Selvaraju, R. R., et al. (2017). Grad-CAM: Visual explanations from deep networks.
 - Becker, S., et al. (2018). AudioMNIST: Exploring XAI for audio analysis on a simple benchmark.
+
+# XAI Experiments for AudioMNIST Spectrograms
+
+This document details the implementation and usage of the XAI (eXplainable AI) experiments for analyzing the AudioMNIST model's decision-making process.
+
+## Overview
+
+The `objective1_experiments.py` script implements various XAI methods to generate and evaluate explanations for a trained AudioMNIST model's predictions. The experiments focus on three key XAI methods and four evaluation metrics to assess the quality of the explanations.
+
+## Implementation Details
+
+### XAI Methods
+
+The script implements three popular XAI methods:
+
+1. **Saliency Maps**
+   - Basic gradient-based approach
+   - Shows which input features most influence the model's prediction
+   - Implemented using Captum's `Saliency` class
+
+2. **Integrated Gradients**
+   - Path-based attribution method
+   - Considers the gradients along a path from a baseline to the input
+   - Better at capturing feature importance compared to basic saliency
+   - Implemented using Captum's `IntegratedGradients` class
+
+3. **Guided GradCAM**
+   - Combines Guided Backpropagation with Class Activation Mapping
+   - Particularly effective for CNN architectures
+   - Uses the last convolutional layer (`model.features[-1]`) for activation maps
+   - Implemented using Captum's `GuidedGradCam` class
+
+### Evaluation Metrics
+
+The script uses four quantitative metrics from the Quantus library:
+
+1. **Faithfulness Correlation**
+   - Measures how well the explanation correlates with model predictions
+   - Uses baseline replacement perturbation
+   - Higher scores indicate better alignment between explanations and model behavior
+   ```python
+   quantus.FaithfulnessCorrelation(
+       nr_runs=10,
+       perturb_func=quantus.perturb_func.baseline_replacement_by_indices,
+       similarity_func=quantus.similarity_func.correlation_pearson
+   )
+   ```
+
+2. **Average Sensitivity**
+   - Evaluates robustness of explanations to input perturbations
+   - Uses uniform noise perturbation
+   - Lower scores indicate more stable explanations
+   ```python
+   quantus.AvgSensitivity(
+       nr_samples=10,
+       perturb_func=quantus.perturb_func.uniform_noise,
+       similarity_func=quantus.similarity_func.difference
+   )
+   ```
+
+3. **Sparseness**
+   - Measures how focused/concentrated the explanations are
+   - Higher scores indicate more precise attribution
+   ```python
+   quantus.Sparseness()
+   ```
+
+4. **Random Logit**
+   - Tests if explanations are specific to the predicted class
+   - Uses SSIM (Structural Similarity Index) for comparison
+   - Lower scores indicate better class specificity
+   ```python
+   quantus.RandomLogit(
+       num_classes=10,
+       similarity_func=quantus.similarity_func.ssim
+   )
+   ```
+
+## Visualizations
+
+### Explanation Visualizations
+
+For each XAI method, the script generates visualizations comparing the original spectrogram with its explanation:
+
+```python
+def visualize_explanation(self, spectrogram, explanation, method, sample_idx):
+    plt.figure(figsize=(10, 5))
+    
+    # Original spectrogram
+    plt.subplot(1, 2, 1)
+    plt.imshow(spectrogram.squeeze(), cmap='viridis')
+    plt.title("Original Spectrogram")
+    plt.axis('off')
+    
+    # Explanation
+    plt.subplot(1, 2, 2)
+    plt.imshow(explanation.squeeze(), cmap='seismic', clim=(-1, 1))
+    plt.title(f"{method} Explanation")
+    plt.axis('off')
+```
+
+**How to Interpret:**
+- Left plot: Original mel-spectrogram (frequency vs. time)
+  - Brighter colors indicate higher energy at that frequency/time
+- Right plot: Attribution map
+  - Red regions: Positive attribution (features supporting the prediction)
+  - Blue regions: Negative attribution (features opposing the prediction)
+  - White regions: Neutral attribution
+  - Intensity indicates attribution strength
+
+### Method Ranking Visualization
+
+The script generates a heatmap comparing the performance of different XAI methods across metrics:
+
+```python
+def generate_summary_visualizations(self, results):
+    df = pd.DataFrame.from_dict(results, orient='index')
+    df_normalized = df.apply(lambda x: (x - x.min()) / (x.max() - x.min()))
+    df_normalized_rank = df_normalized.rank()
+    
+    plt.figure(figsize=(10, 6))
+    sns.heatmap(df_normalized_rank, annot=True, cmap='YlGnBu', fmt='.0f')
+    plt.title('Ranking of XAI Methods across Metrics')
+```
+
+**How to Interpret:**
+- Rows: XAI methods
+- Columns: Evaluation metrics
+- Values: Relative ranking (1 = best, 3 = worst)
+- Color intensity: Darker colors indicate better performance
+
+## Results Storage
+
+Results are saved in the following structure:
+```
+results/audiomnist/xai_results/
+├── metrics/
+│   ├── xai_metrics.csv       # Quantitative metrics for each method
+│   ├── xai_results.json      # Detailed results including all metrics
+│   └── method_ranking_heatmap.png
+└── visualizations/
+    ├── saliency_sample_*.png
+    ├── integratedgradients_sample_*.png
+    └── guidedgradcam_sample_*.png
+```
+
+## Usage
+
+To run the experiments:
+```bash
+python experiments/objective1/src/xai/objective1_experiments.py
+```
+
+## Future Improvements
+
+1. **Visualization Standardization**
+   - Current spectrogram visualizations in XAI results differ from those in preprocessing
+   - Need to align visualization parameters (colormap, scale, orientation) with `audio_preprocessing.py`
+   - Consider adding frequency and time axes labels for better interpretability
+
+2. **Additional Metrics**
+   - Consider adding localization metrics
+   - Implement temporal coherence measures specific to audio data
+
+3. **Batch Processing**
+   - Currently processes one batch of test data
+   - Could be extended to analyze more samples for robust results
+
+## Dependencies
+
+- PyTorch
+- Captum
+- Quantus
+- NumPy
+- Matplotlib
+- Seaborn
+- Pandas

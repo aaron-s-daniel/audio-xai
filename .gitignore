@@ -169,3 +169,34 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# Large model files
+*.pth
+*.pt
+*.pkl
+
+# Specific large files
+experiments/objective1/results/audiomnist/best_audiomnist_alexnet.pth
+experiments/objective1/results/audiomnist/audiomnist_test_spectrograms.pt
+data/audio_mnist/preprocessed/audiomnist_preprocessed.pkl
+
+# Other common files to ignore
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+
+
+# Large model and data files
+*.pt
+*.pth
+*.pkl
+
+# Specific large files
+experiments/objective1/results/audiomnist/audiomnist_test_spectrograms.pt
+experiments/objective1/results/audiomnist/best_audiomnist_alexnet.pth
+
+# Directories that might contain large files
+data/
+**/preprocessed/

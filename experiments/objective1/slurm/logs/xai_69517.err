@@ -1,0 +1,18 @@
+2025-03-15 11:30:35.703311: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-03-15 11:30:35.888698: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-15 11:30:35.928547: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-03-15 11:30:35.933717: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-03-15 11:30:36.003577: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-03-15 11:30:38.462753: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Processing XAI methods:   0%|          | 0/3 [00:00<?, ?it/s]Processing XAI methods:  33%|███▎      | 1/3 [00:08<00:17,  8.77s/it]Processing XAI methods:  67%|██████▋   | 2/3 [00:17<00:08,  8.88s/it]Processing XAI methods: 100%|██████████| 3/3 [00:24<00:00,  7.98s/it]Processing XAI methods: 100%|██████████| 3/3 [00:24<00:00,  8.21s/it]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/mqa887/audio-xai/experiments/objective1/src/xai/objective1_experiments.py", line 240, in <module>
+    main() 
+    ^^^^^^
+  File "/home/mqa887/audio-xai/experiments/objective1/src/xai/objective1_experiments.py", line 237, in main
+    print(f"  {metric}: {value:.4f}")
+                        ^^^^^^^^^^^
+TypeError: unsupported format string passed to NoneType.__format__

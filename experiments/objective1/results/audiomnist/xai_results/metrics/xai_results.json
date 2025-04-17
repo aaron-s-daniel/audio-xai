@@ -1,0 +1,20 @@
+{
+    "Saliency": {
+        "Faithfulness": 0.18407717190056108,
+        "Robustness": 0.13728620863403196,
+        "Complexity": 0.8393500467684665,
+        "Randomisation": 0.7254214528191715
+    },
+    "IntegratedGradients": {
+        "Faithfulness": -0.45458525916748205,
+        "Robustness": 0.21293747855702772,
+        "Complexity": 0.7983824293532851,
+        "Randomisation": 0.7124620609118821
+    },
+    "GuidedGradCam": {
+        "Faithfulness": 0.403841038053672,
+        "Robustness": 0.14081334770926332,
+        "Complexity": 0.917226968109579,
+        "Randomisation": null
+    }
+}

@@ -1,0 +1,36 @@
+2025-03-13 16:19:52.630092: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-03-13 16:19:52.801439: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-03-13 16:19:52.842174: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-03-13 16:19:52.848092: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-03-13 16:19:52.916344: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-03-13 16:19:55.384922: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Processing XAI methods:   0%|          | 0/3 [00:00<?, ?it/s]Processing XAI methods:   0%|          | 0/3 [00:02<?, ?it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/mqa887/audio-xai/src/xai/objective1_experiments.py", line 222, in <module>
+    main() 
+    ^^^^^^
+  File "/home/mqa887/audio-xai/src/xai/objective1_experiments.py", line 211, in main
+    results = experiment.run_experiments()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mqa887/audio-xai/src/xai/objective1_experiments.py", line 151, in run_experiments
+    method_results = self.evaluate_explanations(method, explanations, x_batch, y_batch)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mqa887/audio-xai/src/xai/objective1_experiments.py", line 103, in evaluate_explanations
+    scores = metric_func(
+             ^^^^^^^^^^^^
+  File "/home/mqa887/.conda/envs/myvm/lib/python3.12/site-packages/quantus/metrics/robustness/avg_sensitivity.py", line 284, in __call__
+    return super().__call__(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/mqa887/.conda/envs/myvm/lib/python3.12/site-packages/quantus/metrics/base.py", line 290, in __call__
+    result = self.evaluate_batch(**data_batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mqa887/.conda/envs/myvm/lib/python3.12/site-packages/quantus/metrics/robustness/avg_sensitivity.py", line 353, in evaluate_batch
+    a_perturbed = self.explain_batch(model, x_perturbed, y_batch)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mqa887/.conda/envs/myvm/lib/python3.12/site-packages/quantus/metrics/base.py", line 926, in explain_batch
+    a_batch = self.explain_func(
+              ^^^^^^^^^^^^^^^^^^
+TypeError: XAIExperiment.generate_explanations() got an unexpected keyword argument 'device'
