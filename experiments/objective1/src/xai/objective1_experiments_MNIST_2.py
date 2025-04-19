@@ -80,7 +80,16 @@ class XAIExperiment:
     def generate_explanations(self, method, inputs, targets):
         inputs = inputs.to(self.device)
         targets = targets.to(self.device)
-        return self.xai_methods[method].attribute(inputs, target=targets).cpu().detach().numpy()
+
+        if method == "Occlusion":
+            return self.xai_methods[method].attribute(
+                inputs,
+                target=targets,
+                sliding_window_shapes=(1, 5, 5),
+                strides=(1, 2, 2)
+            ).cpu().detach().numpy()
+        else:
+            return self.xai_methods[method].attribute(inputs, target=targets).cpu().detach().numpy()
 
     def evaluate_explanations(self, method, explanations, x_batch, y_batch):
         results = {}
@@ -181,7 +190,7 @@ def main():
     model_path = 'results/mnist/best_mnist_alexnet.pth'
     test_data_path = 'results/mnist/mnist_test_images.pt'
     test_labels_path = 'results/mnist/mnist_test_labels.pt'
-    results_dir = 'results/mnist/xai_results_2'
+    results_dir = 'results/mnist/xai_results'
 
     experiment = XAIExperiment(
         model_path=model_path,
@@ -198,7 +207,10 @@ def main():
     for method, metrics in results.items():
         print(f"\n{method}:")
         for metric, value in metrics.items():
-            print(f"  {metric}: {value:.4f}" if value is not None else f"  {metric}: None")
+            try:
+                print(f"  {metric}: {float(value):.4f}")
+            except (ValueError, TypeError):
+                print(f"  {metric}: {value}")
 
 
 if __name__ == "__main__":
