@@ -1,0 +1,243 @@
+Start time: 2025-04-19 02:23:40
+Loading Anaconda module...
+Activating conda environment...
+Conda environment:
+
+# conda environments:
+#
+base                   /apps/anaconda3/2024.10-1
+AI                     /home/mqa887/.conda/envs/AI
+myvm                 * /home/mqa887/.conda/envs/myvm
+
+GPU information:
+Sat Apr 19 02:23:43 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 545.23.08              Driver Version: 545.23.08    CUDA Version: 12.3     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Tesla V100S-PCIE-32GB          On  | 00000000:3B:00.0 Off |                  Off |
+| N/A   32C    P0              25W / 250W |      0MiB / 32768MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  Tesla V100S-PCIE-32GB          On  | 00000000:D8:00.0 Off |                  Off |
+| N/A   32C    P0              28W / 250W |      0MiB / 32768MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Running audioMNIST Training script...
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+Failed to download (trying next):
+HTTP Error 404: Not Found
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz to data/mnist/MNIST/raw/train-images-idx3-ubyte.gz
+Extracting data/mnist/MNIST/raw/train-images-idx3-ubyte.gz to data/mnist/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+Failed to download (trying next):
+HTTP Error 404: Not Found
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz to data/mnist/MNIST/raw/train-labels-idx1-ubyte.gz
+Extracting data/mnist/MNIST/raw/train-labels-idx1-ubyte.gz to data/mnist/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+Failed to download (trying next):
+HTTP Error 404: Not Found
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz to data/mnist/MNIST/raw/t10k-images-idx3-ubyte.gz
+Extracting data/mnist/MNIST/raw/t10k-images-idx3-ubyte.gz to data/mnist/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+Failed to download (trying next):
+HTTP Error 404: Not Found
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz to data/mnist/MNIST/raw/t10k-labels-idx1-ubyte.gz
+Extracting data/mnist/MNIST/raw/t10k-labels-idx1-ubyte.gz to data/mnist/MNIST/raw
+
+Epoch 1/50:
+Train Loss: 0.3676, Train Acc: 0.8775
+Val Loss: 0.1108, Val Acc: 0.9711
+Epoch 2/50:
+Train Loss: 0.1145, Train Acc: 0.9693
+Val Loss: 0.1303, Val Acc: 0.9708
+Epoch 3/50:
+Train Loss: 0.1019, Train Acc: 0.9735
+Val Loss: 0.0883, Val Acc: 0.9761
+Epoch 4/50:
+Train Loss: 0.0838, Train Acc: 0.9782
+Val Loss: 0.0964, Val Acc: 0.9783
+Epoch 5/50:
+Train Loss: 0.0750, Train Acc: 0.9795
+Val Loss: 0.0621, Val Acc: 0.9828
+Epoch 6/50:
+Train Loss: 0.0745, Train Acc: 0.9803
+Val Loss: 0.0524, Val Acc: 0.9885
+Epoch 7/50:
+Train Loss: 0.0677, Train Acc: 0.9820
+Val Loss: 0.0889, Val Acc: 0.9790
+Epoch 8/50:
+Train Loss: 0.0626, Train Acc: 0.9829
+Val Loss: 0.0575, Val Acc: 0.9842
+Epoch 9/50:
+Train Loss: 0.0631, Train Acc: 0.9836
+Val Loss: 0.0547, Val Acc: 0.9855
+Epoch 10/50:
+Train Loss: 0.0579, Train Acc: 0.9847
+Val Loss: 0.0624, Val Acc: 0.9842
+Epoch 11/50:
+Train Loss: 0.0624, Train Acc: 0.9834
+Val Loss: 0.0636, Val Acc: 0.9841
+Epoch 12/50:
+Train Loss: 0.0623, Train Acc: 0.9837
+Val Loss: 0.0660, Val Acc: 0.9863
+Epoch 13/50:
+Train Loss: 0.0571, Train Acc: 0.9853
+Val Loss: 0.0617, Val Acc: 0.9835
+Epoch 14/50:
+Train Loss: 0.0574, Train Acc: 0.9854
+Val Loss: 0.0564, Val Acc: 0.9857
+Epoch 15/50:
+Train Loss: 0.0568, Train Acc: 0.9855
+Val Loss: 0.0616, Val Acc: 0.9871
+Epoch 16/50:
+Train Loss: 0.0603, Train Acc: 0.9852
+Val Loss: 0.0553, Val Acc: 0.9871
+Epoch 17/50:
+Train Loss: 0.0630, Train Acc: 0.9841
+Val Loss: 0.0602, Val Acc: 0.9867
+Epoch 18/50:
+Train Loss: 0.0564, Train Acc: 0.9861
+Val Loss: 0.0812, Val Acc: 0.9840
+Epoch 19/50:
+Train Loss: 0.0625, Train Acc: 0.9841
+Val Loss: 0.0683, Val Acc: 0.9851
+Epoch 20/50:
+Train Loss: 0.0635, Train Acc: 0.9838
+Val Loss: 0.0569, Val Acc: 0.9864
+Epoch 21/50:
+Train Loss: 0.0570, Train Acc: 0.9859
+Val Loss: 0.0683, Val Acc: 0.9858
+Epoch 22/50:
+Train Loss: 0.0661, Train Acc: 0.9851
+Val Loss: 0.0639, Val Acc: 0.9868
+Epoch 23/50:
+Train Loss: 0.0531, Train Acc: 0.9864
+Val Loss: 0.0595, Val Acc: 0.9872
+Epoch 24/50:
+Train Loss: 0.0527, Train Acc: 0.9867
+Val Loss: 0.0530, Val Acc: 0.9890
+Epoch 25/50:
+Train Loss: 0.0569, Train Acc: 0.9868
+Val Loss: 0.0599, Val Acc: 0.9858
+Epoch 26/50:
+Train Loss: 0.0553, Train Acc: 0.9874
+Val Loss: 0.0844, Val Acc: 0.9818
+Epoch 27/50:
+Train Loss: 0.0559, Train Acc: 0.9859
+Val Loss: 0.0726, Val Acc: 0.9862
+Epoch 28/50:
+Train Loss: 0.0447, Train Acc: 0.9887
+Val Loss: 0.0584, Val Acc: 0.9873
+Epoch 29/50:
+Train Loss: 0.0516, Train Acc: 0.9879
+Val Loss: 0.0665, Val Acc: 0.9835
+Epoch 30/50:
+Train Loss: 0.0535, Train Acc: 0.9877
+Val Loss: 0.0704, Val Acc: 0.9841
+Epoch 31/50:
+Train Loss: 0.0593, Train Acc: 0.9857
+Val Loss: 0.0772, Val Acc: 0.9829
+Epoch 32/50:
+Train Loss: 0.0502, Train Acc: 0.9882
+Val Loss: 0.1192, Val Acc: 0.9766
+Epoch 33/50:
+Train Loss: 0.0811, Train Acc: 0.9823
+Val Loss: 0.0571, Val Acc: 0.9880
+Epoch 34/50:
+Train Loss: 0.0442, Train Acc: 0.9890
+Val Loss: 0.0686, Val Acc: 0.9885
+Epoch 35/50:
+Train Loss: 0.0555, Train Acc: 0.9871
+Val Loss: 0.0571, Val Acc: 0.9882
+Epoch 36/50:
+Train Loss: 0.0669, Train Acc: 0.9845
+Val Loss: 0.0549, Val Acc: 0.9859
+Epoch 37/50:
+Train Loss: 0.0599, Train Acc: 0.9873
+Val Loss: 0.0568, Val Acc: 0.9868
+Epoch 38/50:
+Train Loss: 0.0456, Train Acc: 0.9889
+Val Loss: 0.0764, Val Acc: 0.9882
+Epoch 39/50:
+Train Loss: 0.0554, Train Acc: 0.9878
+Val Loss: 0.0536, Val Acc: 0.9884
+Epoch 40/50:
+Train Loss: 0.1307, Train Acc: 0.9762
+Val Loss: 0.0872, Val Acc: 0.9806
+Epoch 41/50:
+Train Loss: 0.0641, Train Acc: 0.9849
+Val Loss: 0.0620, Val Acc: 0.9881
+Epoch 42/50:
+Train Loss: 0.1651, Train Acc: 0.9814
+Val Loss: 0.1220, Val Acc: 0.9763
+Epoch 43/50:
+Train Loss: 0.1128, Train Acc: 0.9752
+Val Loss: 0.0737, Val Acc: 0.9847
+Epoch 44/50:
+Train Loss: 0.0602, Train Acc: 0.9856
+Val Loss: 0.0612, Val Acc: 0.9874
+Epoch 45/50:
+Train Loss: 0.0511, Train Acc: 0.9888
+Val Loss: 0.0639, Val Acc: 0.9893
+Epoch 46/50:
+Train Loss: 0.0995, Train Acc: 0.9825
+Val Loss: 0.1151, Val Acc: 0.9776
+Epoch 47/50:
+Train Loss: 0.0698, Train Acc: 0.9848
+Val Loss: 0.0590, Val Acc: 0.9883
+Epoch 48/50:
+Train Loss: 0.1306, Train Acc: 0.9759
+Val Loss: 0.0614, Val Acc: 0.9873
+Epoch 49/50:
+Train Loss: 0.0663, Train Acc: 0.9858
+Val Loss: 0.0834, Val Acc: 0.9853
+Epoch 50/50:
+Train Loss: 0.0634, Train Acc: 0.9873
+Val Loss: 0.1275, Val Acc: 0.9742
+
+Training completed. Results saved to results/mnist
+Test Accuracy: 0.9890
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99       980
+           1       0.99      0.99      0.99      1135
+           2       0.98      1.00      0.99      1032
+           3       0.99      0.99      0.99      1010
+           4       0.98      0.99      0.99       982
+           5       0.98      0.99      0.99       892
+           6       0.99      0.99      0.99       958
+           7       0.99      0.99      0.99      1028
+           8       1.00      0.99      0.99       974
+           9       0.98      0.98      0.98      1009
+
+    accuracy                           0.99     10000
+   macro avg       0.99      0.99      0.99     10000
+weighted avg       0.99      0.99      0.99     10000
+
+Training completed successfully!
+End time: 2025-04-19 02:43:53
