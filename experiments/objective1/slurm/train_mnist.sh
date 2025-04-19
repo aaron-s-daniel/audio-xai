@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=audio_preprocess
-#SBATCH --output=slurm/logs/preprocess_%j.out
-#SBATCH --error=slurm/logs/preprocess_%j.err
+#SBATCH --job-name=audio_MNISTtrain
+#SBATCH --output=slurm/logs/MNISTtrain_%j.out
+#SBATCH --error=slurm/logs/MNISTtrain_%j.err
 #SBATCH --partition=gpu2v100
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -32,7 +32,7 @@ nvidia-smi
 # Create necessary directories if they don't exist
 mkdir -p slurm/logs
 
-# Run the preprocessing script
+# Run the MNISTtraining script
 echo "Running audioMNIST Training script..."
 python -m src.models.train_mnist_model
 
