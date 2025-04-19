@@ -2,7 +2,7 @@
 #SBATCH --job-name=MNISTxai
 #SBATCH --output=slurm/logs/MNISTxai_%j.out
 #SBATCH --error=slurm/logs/MNISTxai_%j.err
-#SBATCH --partition=gpu2v100
+#SBATCH --partition=gpu1v100
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
