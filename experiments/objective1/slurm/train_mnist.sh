@@ -34,7 +34,7 @@ mkdir -p slurm/logs
 
 # Run the preprocessing script
 echo "Running audioMNIST Training script..."
-python -m src.models.train_audiomnist_model
+python -m src.models.train_mnist_model
 
 # Print completion message
 echo "Training completed successfully!"
