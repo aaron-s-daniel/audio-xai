@@ -40,4 +40,4 @@ python -m src.xai.objective1_experiments
 
 # Print completion message
 echo "XAI experiments completed successfully!"
-echo "End time: $(date '+%Y-%m-%d %H:%M:%S')" 
+echo "End time: $(date '+%Y-%m-%d %H:%M:%S')"  
