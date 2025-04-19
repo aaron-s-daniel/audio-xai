@@ -1,0 +1,117 @@
+Start time: 2025-04-19 13:17:20
+Loading Anaconda module...
+Activating conda environment...
+Conda environment:
+
+# conda environments:
+#
+base                   /apps/anaconda3/2024.10-1
+AI                     /home/mqa887/.conda/envs/AI
+myvm                 * /home/mqa887/.conda/envs/myvm
+
+GPU information:
+Sat Apr 19 13:17:23 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 545.23.08              Driver Version: 545.23.08    CUDA Version: 12.3     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Tesla V100S-PCIE-32GB          On  | 00000000:3B:00.0 Off |                  Off |
+| N/A   27C    P0              24W / 250W |      0MiB / 32768MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Running MNISTxai experiments...
+Using device: cuda
+
+Generating explanations for Saliency...
+Evaluating Faithfulness for Saliency...
+Evaluating Robustness for Saliency...
+Error evaluating Robustness for Saliency: XAIExperiment.generate_explanations() got an unexpected keyword argument 'model'
+Evaluating Complexity for Saliency...
+Evaluating Randomisation for Saliency...
+Error evaluating Randomisation for Saliency: XAIExperiment.generate_explanations() got an unexpected keyword argument 'model'
+
+Generating explanations for IntegratedGradients...
+Evaluating Faithfulness for IntegratedGradients...
+Evaluating Robustness for IntegratedGradients...
+Error evaluating Robustness for IntegratedGradients: XAIExperiment.generate_explanations() got an unexpected keyword argument 'model'
+Evaluating Complexity for IntegratedGradients...
+Evaluating Randomisation for IntegratedGradients...
+Error evaluating Randomisation for IntegratedGradients: XAIExperiment.generate_explanations() got an unexpected keyword argument 'model'
+
+Generating explanations for GuidedGradCam...
+Evaluating Faithfulness for GuidedGradCam...
+Evaluating Robustness for GuidedGradCam...
+Error evaluating Robustness for GuidedGradCam: XAIExperiment.generate_explanations() got an unexpected keyword argument 'model'
+Evaluating Complexity for GuidedGradCam...
+Evaluating Randomisation for GuidedGradCam...
+Error evaluating Randomisation for GuidedGradCam: XAIExperiment.generate_explanations() got an unexpected keyword argument 'model'
+
+Generating explanations for DeepLift...
+Evaluating Faithfulness for DeepLift...
+Evaluating Robustness for DeepLift...
+Error evaluating Robustness for DeepLift: XAIExperiment.generate_explanations() got an unexpected keyword argument 'model'
+Evaluating Complexity for DeepLift...
+Evaluating Randomisation for DeepLift...
+Error evaluating Randomisation for DeepLift: XAIExperiment.generate_explanations() got an unexpected keyword argument 'model'
+
+Generating explanations for InputXGradient...
+Evaluating Faithfulness for InputXGradient...
+Evaluating Robustness for InputXGradient...
+Error evaluating Robustness for InputXGradient: XAIExperiment.generate_explanations() got an unexpected keyword argument 'model'
+Evaluating Complexity for InputXGradient...
+Evaluating Randomisation for InputXGradient...
+Error evaluating Randomisation for InputXGradient: XAIExperiment.generate_explanations() got an unexpected keyword argument 'model'
+
+Generating explanations for Occlusion...
+Error processing method Occlusion: Occlusion.attribute() missing 1 required positional argument: 'sliding_window_shapes'
+Error in run_experiments: '<=' not supported between instances of 'float' and 'str'
+
+Experiment completed successfully!
+Results saved to: results/mnist/xai_results_2
+
+Summary of results:
+
+Saliency:
+  Faithfulness: 0.0118
+  Robustness: None
+  Complexity: 0.6293
+  Randomisation: None
+
+IntegratedGradients:
+  Faithfulness: 0.6071
+  Robustness: None
+  Complexity: 0.9165
+  Randomisation: None
+
+GuidedGradCam:
+  Faithfulness: nan
+  Robustness: None
+  Complexity: 0.4795
+  Randomisation: None
+
+DeepLift:
+  Faithfulness: 0.5427
+  Robustness: None
+  Complexity: 0.9210
+  Randomisation: None
+
+InputXGradient:
+  Faithfulness: 0.7966
+  Robustness: None
+  Complexity: 0.9206
+  Randomisation: None
+
+Occlusion:
+MNISTxai experiments completed successfully!
+End time: 2025-04-19 13:18:05

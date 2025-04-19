@@ -1,0 +1,35 @@
+{
+    "Saliency": {
+        "Faithfulness": 0.011839064023488489,
+        "Robustness": null,
+        "Complexity": 0.6293300995377948,
+        "Randomisation": null
+    },
+    "IntegratedGradients": {
+        "Faithfulness": 0.6071359473851813,
+        "Robustness": null,
+        "Complexity": 0.9165056962577569,
+        "Randomisation": null
+    },
+    "GuidedGradCam": {
+        "Faithfulness": NaN,
+        "Robustness": null,
+        "Complexity": 0.4795172111601388,
+        "Randomisation": null
+    },
+    "DeepLift": {
+        "Faithfulness": 0.5427016189239202,
+        "Robustness": null,
+        "Complexity": 0.921036930981412,
+        "Randomisation": null
+    },
+    "InputXGradient": {
+        "Faithfulness": 0.7965568422613344,
+        "Robustness": null,
+        "Complexity": 0.9206368509794507,
+        "Randomisation": null
+    },
+    "Occlusion": {
+        "error": "Occlusion.attribute() missing 1 required positional argument: 'sliding_window_shapes'"
+    }
+}

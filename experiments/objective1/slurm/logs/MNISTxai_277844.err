@@ -1,0 +1,17 @@
+2025-04-19 13:17:36.689779: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-04-19 13:17:36.909065: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-04-19 13:17:36.955717: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-04-19 13:17:36.960896: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-04-19 13:17:37.033695: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-04-19 13:17:39.850922: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Processing XAI methods:   0%|          | 0/6 [00:00<?, ?it/s]Processing XAI methods:  17%|█▋        | 1/6 [00:04<00:20,  4.14s/it]Processing XAI methods:  33%|███▎      | 2/6 [00:07<00:14,  3.52s/it]Processing XAI methods:  50%|█████     | 3/6 [00:10<00:09,  3.19s/it]Processing XAI methods:  67%|██████▋   | 4/6 [00:12<00:06,  3.01s/it]Processing XAI methods:  83%|████████▎ | 5/6 [00:15<00:02,  2.85s/it]Processing XAI methods: 100%|██████████| 6/6 [00:15<00:00,  2.55s/it]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/mqa887/audio-xai/experiments/objective1/src/xai/objective1_experiments_MNIST_2.py", line 205, in <module>
+    main()
+  File "/home/mqa887/audio-xai/experiments/objective1/src/xai/objective1_experiments_MNIST_2.py", line 201, in main
+    print(f"  {metric}: {value:.4f}" if value is not None else f"  {metric}: None")
+                        ^^^^^^^^^^^
+ValueError: Unknown format code 'f' for object of type 'str'
