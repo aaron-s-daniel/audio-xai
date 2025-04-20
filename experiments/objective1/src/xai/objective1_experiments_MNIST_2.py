@@ -86,7 +86,8 @@ class XAIExperiment:
                 inputs,
                 target=targets,
                 sliding_window_shapes=(1, 5, 5),
-                strides=(1, 2, 2)
+                strides=(1, 2, 2),
+                baselines=torch.zeros_like(inputs)
             ).cpu().detach().numpy()
         else:
             return self.xai_methods[method].attribute(inputs, target=targets).cpu().detach().numpy()
