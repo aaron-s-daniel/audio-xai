@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=OB2_Diag_MNISTxai
+#SBATCH --job-name=MNISTxai
 #SBATCH --output=slurm/logs/MNISTxai_%j.out
 #SBATCH --error=slurm/logs/MNISTxai_%j.err
 #SBATCH --partition=gpu1v100
@@ -31,8 +31,8 @@ nvidia-smi
 
 
 # Run the MNISTxai experiments
-echo "Running Objective 2 IG Diagnostics experiments..."
-python -m src.xai.objective2_ig_diagnostics
+echo "Running MNISTxai experiments..."
+python -m src.xai.objective2_experiments_MNIST
 
 # Print completion message
 echo "Objective 2 experiments completed successfully!"
