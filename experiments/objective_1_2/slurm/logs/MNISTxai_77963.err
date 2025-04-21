@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/mqa887/audio-xai/experiments/objective_1_2/src/xai/objective2_ig_diagnostics.py", line 69, in <module>
+    faithfulness_scores = load_faithfulness_scores("/home/mqa887/audio-xai/experiments/objective_1_2/obj2/zero_per_sample/metrics/xai_results_zero_per_sample.json")
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mqa887/audio-xai/experiments/objective_1_2/src/xai/objective2_ig_diagnostics.py", line 35, in load_faithfulness_scores
+    return results['IntegratedGradients']['Faithfulness_per_sample']
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'Faithfulness_per_sample'

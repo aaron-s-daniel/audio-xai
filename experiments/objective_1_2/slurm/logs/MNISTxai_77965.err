@@ -1,0 +1,25 @@
+2025-04-21 01:20:04.942531: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-04-21 01:20:05.101634: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-04-21 01:20:05.140481: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-04-21 01:20:05.145738: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-04-21 01:20:05.210243: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-04-21 01:20:07.684281: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/mqa887/audio-xai/experiments/objective_1_2/src/xai/objective2_experiments_z.py", line 245, in <module>
+    main()
+  File "/home/mqa887/audio-xai/experiments/objective_1_2/src/xai/objective2_experiments_z.py", line 222, in main
+    experiment = XAIExperiment(
+                 ^^^^^^^^^^^^^^
+  File "/home/mqa887/audio-xai/experiments/objective_1_2/src/xai/objective2_experiments_z.py", line 48, in __init__
+    "Faithfulness": quantus.FaithfulnessCorrelation(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mqa887/.conda/envs/myvm/lib/python3.12/site-packages/quantus/metrics/faithfulness/faithfulness_correlation.py", line 127, in __init__
+    super().__init__(
+  File "/home/mqa887/.conda/envs/myvm/lib/python3.12/site-packages/quantus/metrics/base.py", line 146, in __init__
+    warn.check_kwargs(kwargs)
+  File "/home/mqa887/.conda/envs/myvm/lib/python3.12/site-packages/quantus/helpers/warn.py", line 32, in check_kwargs
+    raise ValueError(
+ValueError: Unexpected keyword arguments encountered: {'return_aggregated': 'none'}. To ensure proper usage, please refer to the 'get_params' method of the initialised metric instance or consult the Quantus documentation. Avoid passing extraneous keyword arguments. Ensure that your metric arguments are correctly structured, particularly 'normalise_func_kwargs', 'explain_func_kwargs', and 'model_predict_kwargs'. Additionally, always verify for any typos.
