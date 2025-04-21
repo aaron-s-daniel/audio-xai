@@ -128,7 +128,11 @@ class XAIExperiment:
                     explain_func=self.generate_explanations,
                     explain_func_kwargs={"method": method}
                 )
-                results[metric_name] = float(np.mean(scores))
+                # results[metric_name] = float(np.mean(scores))
+                results[metric_name] = {
+                    "mean": float(np.mean(scores)),
+                    "per_sample": scores
+                }
             except Exception as e:
                 print(f"Error evaluating {metric_name} for {method}: {str(e)}")
                 results[metric_name] = None
@@ -212,7 +216,7 @@ def main():
     model_path = 'results/audiomnist/best_audiomnist_alexnet.pth'
     test_data_path = 'results/audiomnist/audiomnist_test_spectrograms.pt'
     test_labels_path = 'results/audiomnist/audiomnist_test_labels.pt'
-    results_dir = 'obj2/zero'
+    results_dir = 'obj2/zero_per_sample'
 
     experiment = XAIExperiment(
         model_path=model_path,
