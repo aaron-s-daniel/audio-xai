@@ -50,6 +50,7 @@ class XAIExperiment:
                 perturb_func=quantus.perturb_func.baseline_replacement_by_indices,
                 similarity_func=quantus.similarity_func.correlation_pearson,
                 disable_warnings=True,
+                return_aggregated=False
             ),
             "Robustness": quantus.AvgSensitivity(
                 nr_samples=10,
