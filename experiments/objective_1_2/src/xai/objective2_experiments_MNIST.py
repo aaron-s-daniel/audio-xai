@@ -72,8 +72,8 @@ def main():
     inputs = torch.load("results/mnist/mnist_test_images.pt").to(device)
     labels = torch.load("results/mnist/mnist_test_labels.pt").to(device)
 
-    inputs = inputs[:1000]  # Limit for speed
-    labels = labels[:1000]
+    inputs = inputs[:256]  # Reduced to avoid CUDA OOM  # Limit for speed
+    labels = labels[:256]
 
     results = {}
     for mode in ["zero", "median", "low_energy_mask", "noisy_silence"]:

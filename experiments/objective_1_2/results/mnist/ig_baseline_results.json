@@ -1,0 +1,18 @@
+{
+    "zero": {
+        "faithfulness": 0.6142093757791718,
+        "complexity": 0.9168085008719199
+    },
+    "median": {
+        "faithfulness": 0.42372833201438836,
+        "complexity": 0.8889513747698496
+    },
+    "low_energy_mask": {
+        "faithfulness": 0.6164584348118144,
+        "complexity": 0.9168084836552159
+    },
+    "noisy_silence": {
+        "faithfulness": 0.6328825027616757,
+        "complexity": 0.8326020184448987
+    }
+}
