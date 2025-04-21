@@ -69,7 +69,7 @@ def main():
     model.load_state_dict(torch.load("results/mnist/best_mnist_alexnet.pth", map_location=device))
     model.eval()
 
-    inputs = torch.load("results/mnist/mnist_test_inputs.pt").to(device)
+    inputs = torch.load("results/mnist/mnist_test_images.pt").to(device)
     labels = torch.load("results/mnist/mnist_test_labels.pt").to(device)
 
     inputs = inputs[:1000]  # Limit for speed
