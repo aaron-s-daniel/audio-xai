@@ -212,7 +212,7 @@ def main():
     model_path = 'results/audiomnist/best_audiomnist_alexnet.pth'
     test_data_path = 'results/audiomnist/audiomnist_test_spectrograms.pt'
     test_labels_path = 'results/audiomnist/audiomnist_test_labels.pt'
-    results_dir = 'experiments/objective2/xai_results_median'
+    results_dir = 'experiments/objective_1_2/results/obj2/median'
 
     experiment = XAIExperiment(
         model_path=model_path,
