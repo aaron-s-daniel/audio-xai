@@ -145,7 +145,7 @@ class XAIExperiment:
         plt.axis('off')
 
         plt.subplot(1, 2, 2)
-        plt.imshow(explanation.squeeze(), cmap='seismic', clim=(-abs_max, abs_max))
+        plt.imshow(explanation.squeeze(), cmap='seismic', clim=(-abs_max, abs_max), origin='lower')
         plt.title(f"{method} Attribution")
         plt.axis('off')
 
