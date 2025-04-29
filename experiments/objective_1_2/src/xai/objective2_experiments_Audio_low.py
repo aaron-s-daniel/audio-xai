@@ -212,14 +212,14 @@ def main():
     model_path = 'results/audiomnist/best_audiomnist_alexnet_low.pth'
     test_data_path = 'results/audiomnist/audiomnist_test_spectrograms_low.pt'
     test_labels_path = 'results/audiomnist/audiomnist_test_labels_low.pt'
-    results_dir = 'obj2/zero_low'
+    results_dir = 'obj2/noisy_silence_low'
 
     experiment = XAIExperiment(
         model_path=model_path,
         test_data_path=test_data_path,
         test_labels_path=test_labels_path,
         results_dir=results_dir,
-        baseline_mode="zero"  # options: "zero", "median", "low_energy_mask", "noisy_silence"
+        baseline_mode="noisy_silence"  # options: "zero", "median", "low_energy_mask", "noisy_silence"
     )
 
     results = experiment.run_experiments()
