@@ -1,32 +1,32 @@
 {
     "Saliency": {
-        "Faithfulness": 0.09716014234590112,
+        "Faithfulness": 0.17626169569295264,
         "Robustness": null,
-        "Complexity": 0.839348919431071,
+        "Complexity": 0.8393484149662188,
         "Randomisation": null
     },
     "IntegratedGradients": {
-        "Faithfulness": -0.4545838283680873,
+        "Faithfulness": -0.4545836235105792,
         "Robustness": null,
-        "Complexity": 0.7983820943046613,
+        "Complexity": 0.7983826787256152,
         "Randomisation": null
     },
     "GuidedGradCam": {
-        "Faithfulness": 0.4038341805393867,
+        "Faithfulness": 0.4038402088326577,
         "Robustness": null,
-        "Complexity": 0.9172263506677971,
+        "Complexity": 0.9172265705474735,
         "Randomisation": null
     },
     "DeepLift": {
-        "Faithfulness": -0.4745667849742863,
+        "Faithfulness": -0.474566833401375,
         "Robustness": null,
-        "Complexity": 0.8092640306936907,
+        "Complexity": 0.8092640386089902,
         "Randomisation": null
     },
     "InputXGradient": {
-        "Faithfulness": -0.47777850180386205,
+        "Faithfulness": -0.4777713041066742,
         "Robustness": null,
-        "Complexity": 0.7932017220665558,
+        "Complexity": 0.7932023481724895,
         "Randomisation": null
     },
     "Occlusion": {

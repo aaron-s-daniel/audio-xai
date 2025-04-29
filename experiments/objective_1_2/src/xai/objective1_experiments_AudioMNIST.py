@@ -112,6 +112,27 @@ class XAIExperiment:
                 results[metric_name] = None
         return results
 
+    def save_overlay_visualization(self, image, attribution, method, sample_idx):
+        """Overlay attribution map on top of input image and save to overlay folder."""
+        attr_min, attr_max = np.min(attribution), np.max(attribution)
+        abs_max = max(abs(attr_min), abs(attr_max))
+
+        overlay_dir = os.path.join(self.results_dir, 'visualizations_overlay')
+        os.makedirs(overlay_dir, exist_ok=True)
+        save_path = os.path.join(overlay_dir, f'{method.lower()}_overlay_sample_{sample_idx}.png')
+
+        if os.path.exists(save_path):
+            print(f"Overlay for {method} sample {sample_idx} already exists, skipping...")
+            return
+
+        plt.figure(figsize=(5, 5))
+        plt.imshow(image.squeeze(), cmap='gray', interpolation='none')
+        plt.imshow(attribution.squeeze(), cmap='seismic', clim=(-abs_max, abs_max), alpha=0.5)
+        plt.axis('off')
+        plt.tight_layout()
+        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+        plt.close()
+
     def visualize_explanation(self, image, explanation, method, sample_idx):
         attr_min, attr_max = np.min(explanation), np.max(explanation)
         abs_max = max(abs(attr_min), abs(attr_max))
@@ -147,12 +168,12 @@ class XAIExperiment:
                     results[method] = method_results
 
                     for i in range(min(5, len(x_batch))):
-                        self.visualize_explanation(
-                            x_batch[i].cpu().numpy(),
-                            explanations[i],
-                            method,
-                            i
-                        )
+                        image = x_batch[i].cpu().numpy()
+                        explanation = explanations[i]
+                        self.visualize_explanation(image, explanation, method, i)
+                        self.save_overlay_visualization(image, explanation, method, i)
+
+
                 except Exception as e:
                     print(f"Error processing method {method}: {str(e)}")
                     results[method] = {"error": str(e)}

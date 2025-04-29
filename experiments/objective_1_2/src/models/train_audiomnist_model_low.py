@@ -9,7 +9,8 @@ from sklearn.metrics import accuracy_score, classification_report
 import json
 import pickle
 from datetime import datetime
-from src.models.architectures import AlexNetSmall
+from src.models.architectures import AlexNet
+import torch.nn.functional as F
 
 # Set random seeds for reproducibility
 torch.manual_seed(42)
@@ -29,7 +30,7 @@ def load_preprocessed_data(data_path):
     with open(data_path, 'rb') as f:
         data = pickle.load(f)
     
-    # Convert numpy arrays to PyTorch tensors
+    # Just load tensors directly, no resizing here
     train_data = {
         'high_res': torch.FloatTensor(data['high_res']['train']),
         'low_res': torch.FloatTensor(data['low_res']['train']),
@@ -50,6 +51,7 @@ def load_preprocessed_data(data_path):
     
     return train_data, val_data, test_data, data['params']
 
+
 def train_epoch(model, train_loader, criterion, optimizer, device):
     """Train the model for one epoch."""
     model.train()
@@ -62,7 +64,9 @@ def train_epoch(model, train_loader, criterion, optimizer, device):
         inputs, labels = inputs.to(device), labels.to(device)
         
         optimizer.zero_grad()
+        inputs = torch.nn.functional.interpolate(inputs, size=(128, 128), mode='bilinear', align_corners=False)
         outputs = model(inputs)
+
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
@@ -87,7 +91,9 @@ def validate(model, val_loader, criterion, device):
             inputs, labels = batch
             inputs, labels = inputs.to(device), labels.to(device)
             
+            inputs = torch.nn.functional.interpolate(inputs, size=(128, 128), mode='bilinear', align_corners=False)
             outputs = model(inputs)
+
             loss = criterion(outputs, labels)
             
             total_loss += loss.item()
@@ -139,7 +145,7 @@ def main():
     test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False)
     
     # Initialize model, criterion, and optimizer
-    model = AlexNetSmall().to(device)
+    model = AlexNet().to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     
@@ -202,7 +208,7 @@ def main():
             'classification_report': report
         },
         'model_params': {
-            'architecture': 'AlexNetSmall',
+            'architecture': 'AlexNet',
             'input_channels': 1,
             'num_classes': 10,
             'optimizer': 'Adam',

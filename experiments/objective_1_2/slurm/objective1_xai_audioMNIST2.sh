@@ -36,7 +36,7 @@ nvidia-smi
 
 # Run the MNISTxai experiments
 echo "Running MNISTxai experiments..."
-python -m src.xai.objective1_experiments_AudioMNIST_low
+python -m src.xai.objective1_experiments_AudioMNIST
 
 # Print completion message
 echo "MNISTxai experiments completed successfully!"
