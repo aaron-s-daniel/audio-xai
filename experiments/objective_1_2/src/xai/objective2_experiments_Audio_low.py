@@ -209,7 +209,7 @@ class XAIExperiment:
 
 
 def main():
-    model_path = 'results/audiomnist/best_audiomnist_low.pth'
+    model_path = 'results/audiomnist/best_audiomnist_alexnet_low.pth'
     test_data_path = 'results/audiomnist/audiomnist_test_spectrograms_low.pt'
     test_labels_path = 'results/audiomnist/audiomnist_test_labels_low.pt'
     results_dir = 'obj2/zero_low'
