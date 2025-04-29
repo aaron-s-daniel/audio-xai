@@ -34,7 +34,7 @@ mkdir -p slurm/logs
 
 # Run the audioMNIST training script
 echo "Running audioMNIST Training script..."
-python -m src.models.train_audiomnist_model
+python -m src.models.train_audiomnist_model_low
 
 # Print completion message
 echo "Training completed successfully!"

@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score, classification_report
 import json
 import pickle
 from datetime import datetime
-from src.models.architectures import AlexNet
+from src.models.architectures import AlexNetSmall
 
 # Set random seeds for reproducibility
 torch.manual_seed(42)
@@ -139,7 +139,7 @@ def main():
     test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False)
     
     # Initialize model, criterion, and optimizer
-    model = AlexNet().to(device)
+    model = AlexNetSmall().to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     
@@ -202,7 +202,7 @@ def main():
             'classification_report': report
         },
         'model_params': {
-            'architecture': 'AlexNet',
+            'architecture': 'AlexNetSmall',
             'input_channels': 1,
             'num_classes': 10,
             'optimizer': 'Adam',

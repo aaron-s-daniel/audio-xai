@@ -1,0 +1,212 @@
+Start time: 2025-04-28 22:28:15
+Loading Anaconda module...
+Activating conda environment...
+Conda environment:
+
+# conda environments:
+#
+base                   /apps/anaconda3/2024.10-1
+AI                     /home/mqa887/.conda/envs/AI
+myvm                 * /home/mqa887/.conda/envs/myvm
+
+GPU information:
+Mon Apr 28 22:28:18 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 545.23.08              Driver Version: 545.23.08    CUDA Version: 12.3     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Tesla V100S-PCIE-32GB          On  | 00000000:3B:00.0 Off |                  Off |
+| N/A   26C    P0              24W / 250W |      0MiB / 32768MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  Tesla V100S-PCIE-32GB          On  | 00000000:D8:00.0 Off |                  Off |
+| N/A   28C    P0              24W / 250W |      0MiB / 32768MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Running audioMNIST Training script...
+/home/mqa887/audio-xai/experiments/objective_1_2
+Using device: cuda
+Epoch 1/50:
+Train Loss: 4.3707, Train Acc: 0.1133
+Val Loss: 2.1958, Val Acc: 0.1622
+Epoch 2/50:
+Train Loss: 2.2044, Train Acc: 0.1215
+Val Loss: 2.1324, Val Acc: 0.1900
+Epoch 3/50:
+Train Loss: 2.0910, Train Acc: 0.1904
+Val Loss: 1.9729, Val Acc: 0.2689
+Epoch 4/50:
+Train Loss: 1.9575, Train Acc: 0.2311
+Val Loss: 1.8454, Val Acc: 0.2867
+Epoch 5/50:
+Train Loss: 1.6908, Train Acc: 0.3489
+Val Loss: 1.5409, Val Acc: 0.4222
+Epoch 6/50:
+Train Loss: 1.3304, Train Acc: 0.5200
+Val Loss: 0.9708, Val Acc: 0.6556
+Epoch 7/50:
+Train Loss: 1.0071, Train Acc: 0.6504
+Val Loss: 0.8035, Val Acc: 0.7233
+Epoch 8/50:
+Train Loss: 0.7854, Train Acc: 0.7459
+Val Loss: 0.5495, Val Acc: 0.8144
+Epoch 9/50:
+Train Loss: 0.4662, Train Acc: 0.8444
+Val Loss: 0.5055, Val Acc: 0.8422
+Epoch 10/50:
+Train Loss: 0.4596, Train Acc: 0.8596
+Val Loss: 0.4934, Val Acc: 0.8400
+Epoch 11/50:
+Train Loss: 0.3051, Train Acc: 0.9044
+Val Loss: 0.2958, Val Acc: 0.9033
+Epoch 12/50:
+Train Loss: 0.2233, Train Acc: 0.9311
+Val Loss: 0.3079, Val Acc: 0.9000
+Epoch 13/50:
+Train Loss: 0.1614, Train Acc: 0.9519
+Val Loss: 0.1419, Val Acc: 0.9511
+Epoch 14/50:
+Train Loss: 0.1561, Train Acc: 0.9519
+Val Loss: 0.2930, Val Acc: 0.9089
+Epoch 15/50:
+Train Loss: 0.1760, Train Acc: 0.9437
+Val Loss: 0.2293, Val Acc: 0.9322
+Epoch 16/50:
+Train Loss: 0.1396, Train Acc: 0.9600
+Val Loss: 0.2480, Val Acc: 0.9278
+Epoch 17/50:
+Train Loss: 0.1834, Train Acc: 0.9474
+Val Loss: 0.1409, Val Acc: 0.9589
+Epoch 18/50:
+Train Loss: 0.1432, Train Acc: 0.9611
+Val Loss: 0.2013, Val Acc: 0.9389
+Epoch 19/50:
+Train Loss: 0.1441, Train Acc: 0.9533
+Val Loss: 0.1825, Val Acc: 0.9433
+Epoch 20/50:
+Train Loss: 0.1112, Train Acc: 0.9726
+Val Loss: 0.1467, Val Acc: 0.9600
+Epoch 21/50:
+Train Loss: 0.1133, Train Acc: 0.9659
+Val Loss: 0.2524, Val Acc: 0.9556
+Epoch 22/50:
+Train Loss: 0.1784, Train Acc: 0.9541
+Val Loss: 0.2484, Val Acc: 0.9289
+Epoch 23/50:
+Train Loss: 0.1022, Train Acc: 0.9678
+Val Loss: 0.1286, Val Acc: 0.9600
+Epoch 24/50:
+Train Loss: 0.1351, Train Acc: 0.9630
+Val Loss: 0.1263, Val Acc: 0.9711
+Epoch 25/50:
+Train Loss: 0.0559, Train Acc: 0.9811
+Val Loss: 0.1168, Val Acc: 0.9722
+Epoch 26/50:
+Train Loss: 0.0579, Train Acc: 0.9804
+Val Loss: 0.2192, Val Acc: 0.9467
+Epoch 27/50:
+Train Loss: 0.0684, Train Acc: 0.9815
+Val Loss: 0.1032, Val Acc: 0.9711
+Epoch 28/50:
+Train Loss: 0.0312, Train Acc: 0.9885
+Val Loss: 0.1145, Val Acc: 0.9700
+Epoch 29/50:
+Train Loss: 0.0409, Train Acc: 0.9859
+Val Loss: 0.1818, Val Acc: 0.9733
+Epoch 30/50:
+Train Loss: 0.1188, Train Acc: 0.9707
+Val Loss: 0.3641, Val Acc: 0.9200
+Epoch 31/50:
+Train Loss: 0.1146, Train Acc: 0.9700
+Val Loss: 0.0905, Val Acc: 0.9833
+Epoch 32/50:
+Train Loss: 0.0888, Train Acc: 0.9752
+Val Loss: 0.1568, Val Acc: 0.9722
+Epoch 33/50:
+Train Loss: 0.0747, Train Acc: 0.9763
+Val Loss: 0.2023, Val Acc: 0.9556
+Epoch 34/50:
+Train Loss: 0.0695, Train Acc: 0.9811
+Val Loss: 0.2831, Val Acc: 0.9644
+Epoch 35/50:
+Train Loss: 0.0697, Train Acc: 0.9815
+Val Loss: 0.1622, Val Acc: 0.9611
+Epoch 36/50:
+Train Loss: 0.0862, Train Acc: 0.9733
+Val Loss: 0.1238, Val Acc: 0.9689
+Epoch 37/50:
+Train Loss: 0.0676, Train Acc: 0.9837
+Val Loss: 0.1487, Val Acc: 0.9667
+Epoch 38/50:
+Train Loss: 0.0417, Train Acc: 0.9889
+Val Loss: 0.1310, Val Acc: 0.9789
+Epoch 39/50:
+Train Loss: 0.1459, Train Acc: 0.9659
+Val Loss: 0.1179, Val Acc: 0.9756
+Epoch 40/50:
+Train Loss: 0.0616, Train Acc: 0.9811
+Val Loss: 0.1730, Val Acc: 0.9500
+Epoch 41/50:
+Train Loss: 0.0449, Train Acc: 0.9885
+Val Loss: 0.2025, Val Acc: 0.9611
+Epoch 42/50:
+Train Loss: 0.0625, Train Acc: 0.9830
+Val Loss: 0.1564, Val Acc: 0.9678
+Epoch 43/50:
+Train Loss: 0.0739, Train Acc: 0.9726
+Val Loss: 0.1625, Val Acc: 0.9656
+Epoch 44/50:
+Train Loss: 0.0768, Train Acc: 0.9822
+Val Loss: 0.1283, Val Acc: 0.9589
+Epoch 45/50:
+Train Loss: 0.0330, Train Acc: 0.9893
+Val Loss: 0.2859, Val Acc: 0.9600
+Epoch 46/50:
+Train Loss: 0.1502, Train Acc: 0.9667
+Val Loss: 0.1026, Val Acc: 0.9756
+Epoch 47/50:
+Train Loss: 0.0496, Train Acc: 0.9881
+Val Loss: 0.1798, Val Acc: 0.9700
+Epoch 48/50:
+Train Loss: 0.0494, Train Acc: 0.9878
+Val Loss: 0.1524, Val Acc: 0.9700
+Epoch 49/50:
+Train Loss: 0.0784, Train Acc: 0.9815
+Val Loss: 0.1096, Val Acc: 0.9778
+Epoch 50/50:
+Train Loss: 0.1092, Train Acc: 0.9741
+Val Loss: 0.1682, Val Acc: 0.9678
+
+Training completed. Results saved to results/audiomnist
+Test Accuracy: 0.9811
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       1.00      0.90      0.95       100
+           2       0.94      1.00      0.97       100
+           3       1.00      1.00      1.00       100
+           4       0.98      0.98      0.98       100
+           5       1.00      0.97      0.98       100
+           6       0.97      1.00      0.99       100
+           7       0.98      0.99      0.99       100
+           8       0.98      1.00      0.99       100
+           9       0.98      0.99      0.99       100
+
+    accuracy                           0.98       900
+   macro avg       0.98      0.98      0.98       900
+weighted avg       0.98      0.98      0.98       900
+
+Training completed successfully!
+End time: 2025-04-28 22:29:06
