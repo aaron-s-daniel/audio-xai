@@ -15,6 +15,7 @@ from src.models.architectures import AlexNet
 torch.manual_seed(42)
 np.random.seed(42)
 
+print(os.getcwd())
 # Create results directory
 results_dir = 'results/audiomnist'
 os.makedirs(results_dir, exist_ok=True)
@@ -125,7 +126,7 @@ def plot_training_history(history, save_path):
 
 def main():
     # Load preprocessed data
-    data_path = 'data/audio_mnist/preprocessed/audiomnist_preprocessed.pkl'
+    data_path = '/home/mqa887/audio-xai/data/audio_mnist/preprocessed/audiomnist_preprocessed.pkl'
     train_data, val_data, test_data, params = load_preprocessed_data(data_path)
     
     # Create data loaders
